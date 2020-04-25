@@ -29,4 +29,6 @@ class calculatorTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    import xmlrunner
+    runner = xmlrunner.XMLTestRunner(output='test-reports')
+    unittest.main(testRunner=runner)
