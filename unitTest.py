@@ -8,7 +8,7 @@ class calculatorTest(unittest.TestCase):
 
     def test_0_add(self):
         self.value = self.cal.add()
-        self.ans=7
+        self.ans=2
         self.assertEqual(self.value,self.ans)
 
     def test_1_sub(self):
@@ -29,6 +29,4 @@ class calculatorTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    import xmlrunner
-    runner = xmlrunner.XMLTestRunner(output='test-reports')
-    unittest.main(testRunner=runner)
+    unittest.main()

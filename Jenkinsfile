@@ -6,20 +6,10 @@ pipeline {
   }
   agent any
   stages {
-    stage('Build') {
-      steps {
-        sh 'pip install -r requirements.txt'
-      }
-    }
     stage('Unit test') {
        steps {
-          sh 'python unitTest.py'
+          sh 'python -m unittest unitTest.py'
        }
-       post {
-        always {
-          junit 'test-reports/*.xml'
-        }
-      }
     }
     stage('Building image') {
       steps{
