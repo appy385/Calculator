@@ -6,6 +6,16 @@ pipeline {
   }
   agent any
   stages {
+    stage('Unit test') {
+       steps {
+          sh 'python unitTest.py'
+       }
+       post {
+        always {
+          junit 'test-reports/*.xml'
+        }
+      }
+    }
     stage('Building image') {
       steps{
         script {
