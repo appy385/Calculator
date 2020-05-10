@@ -1,3 +1,5 @@
+import logging
+
 class Calculator:
 
     def __init__(self,a,b):
@@ -30,9 +32,24 @@ class Calculator:
 if __name__ == '__main__':
 
     obj = Calculator(3,4)
-    print(obj.add(),"\n")
-    print(obj.sub(),"\n")
-    print(obj.mul(),"\n")
-    print(obj.div(),"\n")
+    a = obj.add()
+    print(a,"\n")
+    s = obj.sub()
+    print(s,"\n")
+    m = obj.mul()
+    print(m,"\n")
+    d = obj.div()
+    print(d,"\n")
+    obj = Calculator(5,6)
+    a1 = obj.add()
+    print(a,"\n")
 
-    
+    logging.basicConfig(filename="logFile.txt",
+                    filemode='a',
+                    format='%(asctime)s %(levelname)s-%(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S',level=logging.DEBUG)
+    logging.info(a)
+    logging.info(s)
+    logging.info(m)
+    logging.info(d)
+    logging.info(a1)
